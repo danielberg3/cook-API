@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    build:
+      dockerfile: ./docker/files/dockerfile.postgres
+      context: "../"
+    container_name: kitchen_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_DB=kitchen_db
